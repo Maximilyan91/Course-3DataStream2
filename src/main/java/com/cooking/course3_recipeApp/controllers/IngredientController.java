@@ -12,35 +12,41 @@ import java.util.Map;
 @RestController
 @RequestMapping("/ingredient")
 @Tag(name = "Контроллер ингридиентов", description = "CRUD - операции для ингридиентов")
-public class  IngredientController {
+public class IngredientController {
     private final IngredientService ingredientService;
 
     public IngredientController(IngredientService ingredientService) {
         this.ingredientService = ingredientService;
     }
-@Operation(summary = "Добавление нового ингридиента")
+
+    @Operation(summary = "Добавление нового ингридиента")
     @PostMapping
     public ResponseEntity<Ingredient> addIngredient(@RequestBody Ingredient ingredient) {
         return ResponseEntity.ok(ingredientService.addIngredient(ingredient));
     }
+
     @Operation(summary = "Получение ингридиента по ID")
     @GetMapping("/{id}")
     public ResponseEntity<Ingredient> getById(@PathVariable Long id) {
         return ResponseEntity.of(ingredientService.getIngredient(id));
     }
+
     @Operation(summary = "Обновление ингридиента по ID")
     @PutMapping("/{id}")
     public ResponseEntity<Ingredient> update(@PathVariable Long id, @RequestBody Ingredient ingredient) {
         return ResponseEntity.ok(ingredientService.update(id, ingredient));
     }
+
     @Operation(summary = "Удаление ингридиента по ID")
     @DeleteMapping("/{id}")
     public ResponseEntity<Ingredient> delete(@PathVariable Long id) {
         return ResponseEntity.ok(ingredientService.delete(id));
     }
+
     @Operation(summary = "Получение всех ингридиентов")
     @GetMapping()
     public ResponseEntity<Map> getAll() {
         return ResponseEntity.ok(ingredientService.getAll());
     }
+
 }
