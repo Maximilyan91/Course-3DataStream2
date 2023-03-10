@@ -10,7 +10,6 @@ import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 @RequiredArgsConstructor
@@ -41,8 +40,7 @@ public class FileService {
             return objectMapper.readValue(json, typeReference);
         } catch (NoSuchFileException e) {
             return new HashMap<>();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }

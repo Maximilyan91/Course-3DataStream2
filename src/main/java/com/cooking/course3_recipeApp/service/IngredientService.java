@@ -13,7 +13,6 @@ public interface IngredientService {
 
     Ingredient update(Long id, Ingredient ingredient);
 
-
     Ingredient delete(Long id);
 
     Map<Long, Ingredient> getAll();

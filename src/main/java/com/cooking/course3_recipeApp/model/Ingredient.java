@@ -9,5 +9,4 @@ public class Ingredient {
     private String ingredientName;
     private int ingredientNum;
     private String unitOfMeasure;
-
 }

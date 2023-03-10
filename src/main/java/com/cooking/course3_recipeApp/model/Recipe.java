@@ -12,4 +12,5 @@ public class Recipe {
     private int cookingTime;
     private List<Ingredient> ingredient;
     private List<String> stepsCook;
+
 }

@@ -7,12 +7,13 @@ import java.util.Optional;
 
 public interface RecipeService {
 
-     Recipe addRecipe(Recipe recipe);
+    Recipe addRecipe(Recipe recipe);
 
-     Optional<Recipe> getRecipe(Long id);
+    Optional<Recipe> getRecipe(Long id);
 
-     Recipe update(Long id, Recipe recipe);
-     Recipe delete(Long id);
+    Recipe update(Long id, Recipe recipe);
 
-     Map<Long, Recipe> getAll();
+    Recipe delete(Long id);
+
+    Map<Long, Recipe> getAll();
 }
